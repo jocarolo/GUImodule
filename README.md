@@ -65,8 +65,8 @@ $radioButton1 = Add-ScriptRadioButton -Form $form -Text "Opción 1" -Location (N
 $radioButton2 = Add-ScriptRadioButton -Form $form -Text "Opción 2" -Location (New-Object System.Drawing.Point(300, 300))
 
 $groupBox = Add-ScriptGroupBox -Form $form -Text "Mi GroupBox" -Location (New-Object System.Drawing.Point(400, 300)) -Size (New-Object System.Drawing.Size(200, 100))
-$radioButton3 = Add-ScriptRadioButton -Form $form -Text "Opción 3" -Location (New-Object System.Drawing.Point(900, 300)) -GroupBox $groupBox
-$radioButton4 = Add-ScriptRadioButton -Form $form -Text "Opción 4" -Location (New-Object System.Drawing.Point(1000, 300)) -GroupBox $groupBox
+$radioButton3 = Add-ScriptRadioButton -Form $form -Text "Option 3" -Location (New-Object System.Drawing.Point(900, 300)) -GroupBox $groupBox
+$radioButton4 = Add-ScriptRadioButton -Form $form -Text "Option 4" -Location (New-Object System.Drawing.Point(1000, 300)) -GroupBox $groupBox
 
 
 
