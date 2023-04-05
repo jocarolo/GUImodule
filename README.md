@@ -1,5 +1,5 @@
 
-# Powershell
+
 # GUIModule_v1.0.psm1
 
 ## Project description
