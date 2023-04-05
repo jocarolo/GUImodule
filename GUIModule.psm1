@@ -9,37 +9,17 @@
 # 4. Display the form with "Show-ScriptForm".
 # 5. Use the calculation functions to adjust the form size.
 
-function New-ScriptForm {
-    # ...
-}
-
-function Calculate-ScriptFormSize {
-    # ...
-}
-
-function Add-ScriptButton {
-    # ...
-}
-
-function Add-ScriptLabel {
-    # ...
-}
-
-function Add-scriptTextBox {
-    # ...
-}
-
-function Show-scriptForm {
-    # ...
-}
-
-function Add-ScriptCheckBox {
-    # ...
-}
+function New-ScriptForm{} 
+function Calculate-ScriptFormSize{}
+function Add-ScriptButton {}
+function Add-ScriptLabel {}
+function Add-scriptTextBox {}
+function Show-scriptForm {}
+function Add-ScriptCheckBox {}
 
 Export-ModuleMember -Function New-ScriptForm, Show-ScriptForm, Add-scriptLabel, Add-scriptButton, Add-scriptTextBox, Calculate-scriptFormSize
 
-Example of Usage with simple script
+Example of Usage with simple script creating form with buttons 
 
 function Generate-SecurePassword {
     param (
@@ -95,6 +75,7 @@ Show-scriptForm -Form $form
 
 Install-Module PS2EXE -Scope CurrentUser
 
+## Add form 
 function New-ScriptForm {
     param (
         [string] $Title = "New Form",
@@ -117,7 +98,8 @@ function New-ScriptForm {
     return $form
 }
 
-function Measure-ScriptFormSize {
+
+function Measure-ScriptFormSize {    ## Measure the size form according to the existing buttons in form 
     param (
         [System.Windows.Forms.Form] $Form
     )
@@ -144,7 +126,7 @@ function Measure-ScriptFormSize {
     return (New-Object System.Drawing.Size($formWidth, $formHeight))
 }
 
-function Add-ScriptButton {
+function Add-ScriptButton {  ## Add Basic Buttons 
     param (
         $Form,
         [string] $Text,
@@ -159,7 +141,7 @@ function Add-ScriptButton {
     $Form.Controls.Add($button)
 }
 
-function Add-ScriptLabel {
+function Add-ScriptLabel {  ## Add label 
     param (
         $Form,
         [string] $Text,
@@ -173,7 +155,7 @@ function Add-ScriptLabel {
     $Form.Controls.Add($label)
 }
 
-function Add-scriptTextBox {
+function Add-scriptTextBox { #Add Textbox to the form
     param (
         $Form,
         [System.Drawing.Point] $Location,
@@ -188,7 +170,7 @@ function Add-scriptTextBox {
     return $textBox
 }
 
-function Show-scriptForm {
+function Show-scriptForm { ## Show the form in the script, this function should be executed in the last line of the script 
     param (
         $Form
     )
@@ -196,7 +178,7 @@ function Show-scriptForm {
     $Form.ShowDialog()
 }
 
-function Add-ScriptCheckBox {
+function Add-ScriptCheckBox {  ## Add checkbox
     param (
         $Form,
         [string] $Text,
@@ -214,7 +196,7 @@ function Add-ScriptCheckBox {
 
 # Add-ScriptGroupBox: Adds a container in the form of a group box to visually organize other related controls.
 
-function Add-ScriptGroupBox {
+function Add-ScriptGroupBox { ## Add script groupBox
     param (
         $Form,
         [string] $Text,
@@ -265,7 +247,7 @@ function Add-ScriptProgressBar {
     return $progressBar
 }
 
-function Add-ScriptRadioButton {
+function Add-ScriptRadioButton {   ## Add option buttons 
     param (
         $Form,
         [string] $Text,
