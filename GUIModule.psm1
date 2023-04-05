@@ -1,7 +1,6 @@
 ﻿<# GUIModule.psm1
 # Author: Joel Caro 
-# 02/03/2023
-# V1 
+# V1.0 
 # Instructions: 
 # To use this module:
 # 1. Import the module with "Import-Module .\GUIModule.psm1".
