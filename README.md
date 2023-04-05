@@ -4,7 +4,7 @@
 
 ## Project description
 
-GUIModule_v1.0.psm1 is a first version of PowerShell module that provides functions for easily creating forms and graphical user interface (GUI) elements for PowerShell scripts. This tool is useful for those who want to create applications and tools based on PowerShell with a user-friendly graphical interface. We can use the GUIModule.psm1 module to create forms and buttons, text box, checkbox, etc..
+GUIModule_v1.0.psm1 is a first version of PowerShell module that provides functions for easily creating forms and graphical user interface (GUI) elements for PowerShell scripts. No use Third party tools, this module is useful for those who want to create applications and tools based on PowerShell with a user-friendly graphical interface. We can use the GUIModule.psm1 module to create forms and buttons, text box, checkbox, etc..
 
 You can use and customize the functions provided by the GUIModule.psm1 module to create a variety of GUI forms and elements to suit your specific requirements.
 
