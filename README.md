@@ -27,7 +27,7 @@ You can use and customize the functions provided by the GUIModule.psm1 module to
 2. Copy the GUIModule.psm1 file to one of the paths included in the $env:PSModulePath variable, for example, %USERPROFILE%\Documents\WindowsPowerShell\Modules\GUIModule.
 3. Open a new PowerShell window and run the following command to import the module:
 
-   ```powershell
+   ```
    Import-Module GUIModule
 
 ## Usage
@@ -38,10 +38,46 @@ Display the form using the Show-ScriptForm function.
 Use the provided calculation functions to adjust the form's size, if needed.
 Refer to the comments and examples within the GUIModule.psm1 script for more detailed usage instructions and examples.
 
+```powershell
+Import-Module .\GUIModule.psm1
+
+
+$form = New-ScriptForm -Title "Test modul" -Width 400 -Height 200
+
+Add-ScriptLabel -Form $form -Text "Box1:" -Location (New-Object System.Drawing.Point(10, 20))
+$usernameTextBox = Add-scriptTextBox -Form $form -Location (New-Object System.Drawing.Point(10, 50)) -Size (New-Object System.Drawing.Size(350, 20))
+
+Add-scriptLabel -Form $form -Text "Box2:" -Location (New-Object System.Drawing.Point(10, 80))
+$additionalInfoTextBox = Add-scriptTextBox -Form $form -Location (New-Object System.Drawing.Point(10, 110)) -Size (New-Object System.Drawing.Size(350, 20))
+
+Add-scriptButton -Form $form -Text "Button1" -Location (New-Object System.Drawing.Point(10, 150)) -OnClick {
+    Reset-UserPassword -Username $usernameTextBox.Text
+}
+
+Add-scriptButton -Form $form -Text "button2" -Location (New-Object System.Drawing.Point(110, 150)) -OnClick {
+    $form.Close()
+}
+
+Add-ScriptCheckBox -Form $form -Text "Mi CheckBox" -Location (New-Object System.Drawing.Point(200, 150))
+
+$groupBox = Add-ScriptGroupBox -Form $form -Text "Mi GroupBox" -Location (New-Object System.Drawing.Point(300, 150)) -Size (New-Object System.Drawing.Size(200, 100))
+
+$radioButton1 = Add-ScriptRadioButton -Form $form -Text "Opción 1" -Location (New-Object System.Drawing.Point(200, 300))
+$radioButton2 = Add-ScriptRadioButton -Form $form -Text "Opción 2" -Location (New-Object System.Drawing.Point(300, 300))
+
+$groupBox = Add-ScriptGroupBox -Form $form -Text "Mi GroupBox" -Location (New-Object System.Drawing.Point(400, 300)) -Size (New-Object System.Drawing.Size(200, 100))
+$radioButton3 = Add-ScriptRadioButton -Form $form -Text "Opción 3" -Location (New-Object System.Drawing.Point(900, 300)) -GroupBox $groupBox
+$radioButton4 = Add-ScriptRadioButton -Form $form -Text "Opción 4" -Location (New-Object System.Drawing.Point(1000, 300)) -GroupBox $groupBox
+
+
+
+$form.Size = Measure-scriptFormSize -Form $form
+
+Show-scriptForm -Form $form
 ## License
 
 This project is licensed under the MIT License.
-
+```
 ## Contact
 
 If you have any questions or suggestions, please feel free to open an issue on the project's GitHub repository (if available) or contact the project maintainer directly.
