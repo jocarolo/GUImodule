@@ -29,8 +29,8 @@ You can use and customize the functions provided by the GUIModule.psm1 module to
 
    ```
    Import-Module GUIModule
-
-## Usage
+  ```
+  ## Usage
 
 Create a new form using the New-ScriptForm function.
 Add controls to the form using the Add-* functions (e.g., Add-ScriptButton, Add-ScriptLabel, Add-ScriptTextBox, etc.).
@@ -38,9 +38,8 @@ Display the form using the Show-ScriptForm function.
 Use the provided calculation functions to adjust the form's size, if needed.
 Refer to the comments and examples within the GUIModule.psm1 script for more detailed usage instructions and examples.
 
-```powershell
+```
 Import-Module .\GUIModule.psm1
-
 
 $form = New-ScriptForm -Title "Test modul" -Width 400 -Height 200
 
